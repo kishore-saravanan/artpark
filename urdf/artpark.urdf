@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="artpark">
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.09817 0.13618 0.37736"
+        rpy="0 0 0" />
+      <mass
+        value="3.6566" />
+      <inertia
+        ixx="0.093914"
+        ixy="-0.0082304"
+        ixz="-8.6818E-06"
+        iyy="0.13406"
+        iyz="-3.4188E-06"
+        izz="0.090755" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://artpark/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://artpark/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Sideplate1">
+    <inertial>
+      <origin
+        xyz="0.081511 0.0011502 -0.25147"
+        rpy="0 0 0" />
+      <mass
+        value="4.5478" />
+      <inertia
+        ixx="0.099513"
+        ixy="-0.0070767"
+        ixz="-8.6818E-06"
+        iyy="0.14725"
+        iyz="-3.4188E-06"
+        izz="0.10954" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://artpark/meshes/Sideplate1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://artpark/meshes/Sideplate1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="SP1"
+    type="fixed">
+    <origin
+      xyz="-0.038087 -0.58739 0.13975"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Sideplate1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Pick1">
+    <inertial>
+      <origin
+        xyz="0.3317 0.05584 -0.12271"
+        rpy="0 0 0" />
+      <mass
+        value="2.1966" />
+      <inertia
+        ixx="0.025518"
+        ixy="-0.00074862"
+        ixz="-2.7653E-05"
+        iyy="0.031695"
+        iyz="0.00010428"
+        izz="0.020636" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://artpark/meshes/Pick1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://artpark/meshes/Pick1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="P1"
+    type="revolute">
+    <origin
+      xyz="0.17444 -0.070005 -0.42"
+      rpy="3.14 0 3.14" />
+    <parent
+      link="Sideplate1" />
+    <child
+      link="Pick1" />
+    <axis
+      xyz="0 0 1" />
+      <limit 
+        effort="330.0" 
+        lower="-6.28318530718" 
+        upper="6.28318530718" 
+        velocity="2.09439510239" />
+    <!--<limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />-->
+  </joint>
+  <link
+    name="Sideplate2">
+    <inertial>
+      <origin
+        xyz="0.081511 0.0011502 -0.16858"
+        rpy="0 0 0" />
+      <mass
+        value="4.5478" />
+      <inertia
+        ixx="0.099513"
+        ixy="-0.0070767"
+        ixz="-8.6818E-06"
+        iyy="0.14725"
+        iyz="-3.4188E-06"
+        izz="0.10954" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://artpark/meshes/Sideplate2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://artpark/meshes/Sideplate2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="SP2"
+    type="fixed">
+    <origin
+      xyz="-0.038087 -0.58739 0.13975"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Sideplate2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Pick2">
+    <inertial>
+      <origin
+        xyz="0.3317 0.05584 0.12867"
+        rpy="0 0 0" />
+      <mass
+        value="2.1966" />
+      <inertia
+        ixx="0.025518"
+        ixy="-0.00074862"
+        ixz="-2.7653E-05"
+        iyy="0.031695"
+        iyz="0.00010428"
+        izz="0.020636" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://artpark/meshes/Pick2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://artpark/meshes/Pick2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="P2"
+    type="revolute">
+    <origin
+      xyz="0.17444 -0.070005 0.003"
+      rpy="3.1416 0 3.1416" />
+    <parent
+      link="Sideplate2" />
+    <child
+      link="Pick2" />
+    <axis
+      xyz="0 0 1" />
+      <limit 
+        effort="330.0" 
+        lower="-6.28318530718" 
+        upper="6.28318530718" 
+        velocity="2.09439510239" />
+    <!--limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" /-->
+  </joint>
+  <link
+    name="Castor1">
+    <inertial>
+      <origin
+        xyz="0.13647 -0.0036577 -0.21003"
+        rpy="0 0 0" />
+      <mass
+        value="3.66" />
+      <inertia
+        ixx="0.093914"
+        ixy="-0.0082304"
+        ixz="-8.6818E-06"
+        iyy="0.13406"
+        iyz="-3.4188E-06"
+        izz="0.090755" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://artpark/meshes/Castor1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://artpark/meshes/Castor1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="C1"
+    type="fixed">
+    <origin
+      xyz="-0.038087 -0.58739 0.13975"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Castor1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Motor1">
+    <inertial>
+      <origin
+        xyz="0.108529622670369 -0.0122570539270556 -0.232736144701145"
+        rpy="0 0 0" />
+      <mass
+        value="4.80169130556418" />
+      <inertia
+        ixx="0.0955388008992538"
+        ixy="-0.00823042696778963"
+        ixz="-8.68180292524445E-06"
+        iyy="0.13568134991927"
+        iyz="-3.41884491358025E-06"
+        izz="0.0910129751946277" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://artpark/meshes/Motor1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://artpark/meshes/Motor1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="M1"
+    type="fixed">
+    <origin
+      xyz="-0.038087 -0.58739 0.13975"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Motor1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Wheel1">
+    <inertial>
+      <origin
+        xyz="0.0531608717862657 1.80411241501588E-16 -8.32667268468867E-17"
+        rpy="0 0 0" />
+      <mass
+        value="1.4945687295717" />
+      <inertia
+        ixx="0.00127363395998331"
+        ixy="7.25866985110572E-19"
+        ixz="-3.19241139506968E-19"
+        iyy="0.00215121231666379"
+        iyz="-3.81639164714898E-17"
+        izz="0.00215121231666373" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://artpark/meshes/Wheel1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.831372549019608 0.83921568627451 0.831372549019608 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://artpark/meshes/Wheel1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="W1"
+    type="revolute">
+    <origin
+      xyz="0.019993 -0.040005 -0.28378"
+      rpy="1.9607 1.5708 0" />
+    <parent
+      link="Motor1" />
+    <child
+      link="Wheel1" />
+    <axis
+      xyz="1 0 0" />
+      <limit 
+        effort="330.0" 
+        lower="-6.28318530718" 
+        upper="6.28318530718" 
+        velocity="2.09439510239" />
+    <!--limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" /-->
+  </joint>
+  <link
+    name="Motor2">
+    <inertial>
+      <origin
+        xyz="0.108529622670369 -0.0122570539270553 -0.187311821832355"
+        rpy="0 0 0" />
+      <mass
+        value="4.80169130556418" />
+      <inertia
+        ixx="0.0955388008992538"
+        ixy="-0.00823042696778957"
+        ixz="-8.68180292526584E-06"
+        iyy="0.13568134991927"
+        iyz="-3.41884491355465E-06"
+        izz="0.0910129751946277" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://artpark/meshes/Motor2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://artpark/meshes/Motor2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="M2"
+    type="fixed">
+    <origin
+      xyz="-0.038087 -0.58739 0.13975"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Motor2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Wheel2">
+    <inertial>
+      <origin
+        xyz="0.0531608717862653 -1.52655665885959E-16 6.93889390390723E-18"
+        rpy="0 0 0" />
+      <mass
+        value="1.49456872957169" />
+      <inertia
+        ixx="0.0012736339599833"
+        ixy="-5.73431004655406E-19"
+        ixz="-7.0264517085419E-20"
+        iyy="0.0021512123166638"
+        iyz="-5.62757109162188E-18"
+        izz="0.00215121231666371" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://artpark/meshes/Wheel2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.831372549019608 0.83921568627451 0.831372549019608 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://artpark/meshes/Wheel2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="W2"
+    type="revolute">
+    <origin
+      xyz="0.019993 -0.040005 -0.13622"
+      rpy="0 -1.5708 0" />
+    <parent
+      link="Motor2" />
+    <child
+      link="Wheel2" />
+    <axis
+      xyz="1 0 0" />
+      <limit 
+        effort="330.0" 
+        lower="-6.28318530718" 
+        upper="6.28318530718" 
+        velocity="2.09439510239" />
+    <!--limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" /-->
+  </joint>
+  <link
+    name="RPLidar">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://artpark/meshes/RPLidar.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://artpark/meshes/RPLidar.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RPL1"
+    type="fixed">
+    <origin
+      xyz="-0.038087 -0.58739 0.13975"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="RPLidar" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

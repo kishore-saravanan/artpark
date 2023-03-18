@@ -1,0 +1,68 @@
+digraph G {
+node [shape=box];
+"base_link" [label="base_link"];
+"chassis" [label="chassis"];
+"castor" [label="castor"];
+"castor_ball" [label="castor_ball"];
+"motor1" [label="motor1"];
+"wheel1" [label="wheel1"];
+"motor2" [label="motor2"];
+"wheel2" [label="wheel2"];
+"rplidar" [label="rplidar"];
+"d435_bottom_screw_frame" [label="d435_bottom_screw_frame"];
+"d435_link" [label="d435_link"];
+"d435_depth_frame" [label="d435_depth_frame"];
+"d435_color_frame" [label="d435_color_frame"];
+"d435_color_optical_frame" [label="d435_color_optical_frame"];
+"d435_depth_optical_frame" [label="d435_depth_optical_frame"];
+"d435_left_ir_frame" [label="d435_left_ir_frame"];
+"d435_left_ir_optical_frame" [label="d435_left_ir_optical_frame"];
+"d435_right_ir_frame" [label="d435_right_ir_frame"];
+"d435_right_ir_optical_frame" [label="d435_right_ir_optical_frame"];
+"side_plate1" [label="side_plate1"];
+"picker" [label="picker"];
+"side_plate2" [label="side_plate2"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_link" -> "base" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"base" -> "chassis"
+"base_link" -> "c1" [label="xyz: -0.21229 0 -0.018 \nrpy: 0 -0 0"]
+"c1" -> "castor"
+"castor" -> "b1" [label="xyz: 0 0 -0.011429 \nrpy: 0 -0 0"]
+"b1" -> "castor_ball"
+"base_link" -> "m1" [label="xyz: 0.12771 -0.176 0.038 \nrpy: 0 -0 0"]
+"m1" -> "motor1"
+"motor1" -> "w1" [label="xyz: 0 -0.061701 0 \nrpy: 0 -0 0"]
+"w1" -> "wheel1"
+"base_link" -> "m2" [label="xyz: 0.12771 0.176 0.038 \nrpy: 0 -0 0"]
+"m2" -> "motor2"
+"motor2" -> "w2" [label="xyz: 0 0.061701 0 \nrpy: 0 -0 0"]
+"w2" -> "wheel2"
+"base_link" -> "rpl1" [label="xyz: -0.040672 0 0.5406 \nrpy: 0 -0 0"]
+"rpl1" -> "rplidar"
+"rplidar" -> "d435_joint" [label="xyz: 0.04 0 -0.08 \nrpy: 0 -0 0"]
+"d435_joint" -> "d435_bottom_screw_frame"
+"d435_bottom_screw_frame" -> "d435_link_joint" [label="xyz: 0 0.0175 0.0125 \nrpy: 0 -0 0"]
+"d435_link_joint" -> "d435_link"
+"d435_link" -> "d435_depth_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"d435_depth_joint" -> "d435_depth_frame"
+"d435_depth_frame" -> "d435_color_joint" [label="xyz: 0 0.015 0 \nrpy: 0 -0 0"]
+"d435_color_joint" -> "d435_color_frame"
+"d435_color_frame" -> "d435_color_optical_joint" [label="xyz: 0 0 0 \nrpy: -1.5708 -0 -1.5708"]
+"d435_color_optical_joint" -> "d435_color_optical_frame"
+"d435_depth_frame" -> "d435_depth_optical_joint" [label="xyz: 0 0 0 \nrpy: -1.5708 -0 -1.5708"]
+"d435_depth_optical_joint" -> "d435_depth_optical_frame"
+"d435_depth_frame" -> "d435_left_ir_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"d435_left_ir_joint" -> "d435_left_ir_frame"
+"d435_left_ir_frame" -> "d435_left_ir_optical_joint" [label="xyz: 0 0 0 \nrpy: -1.5708 -0 -1.5708"]
+"d435_left_ir_optical_joint" -> "d435_left_ir_optical_frame"
+"d435_depth_frame" -> "d435_right_ir_joint" [label="xyz: 0 -0.05 0 \nrpy: 0 -0 0"]
+"d435_right_ir_joint" -> "d435_right_ir_frame"
+"d435_right_ir_frame" -> "d435_right_ir_optical_joint" [label="xyz: 0 0 0 \nrpy: -1.5708 -0 -1.5708"]
+"d435_right_ir_optical_joint" -> "d435_right_ir_optical_frame"
+"base_link" -> "sp1" [label="xyz: 0.29082 -0.213 0.09851 \nrpy: 0 -0 0"]
+"sp1" -> "side_plate1"
+"side_plate1" -> "pic" [label="xyz: 0.016013 0.21352 -0.027525 \nrpy: 0 -0 0"]
+"pic" -> "picker"
+"base_link" -> "sp2" [label="xyz: 0.29082 0.213 0.09851 \nrpy: 0 -0 0"]
+"sp2" -> "side_plate2"
+}

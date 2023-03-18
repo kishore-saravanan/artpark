@@ -1,0 +1,9 @@
+<?xml version='1.0'?>
+<robot name="artpark" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find artpark)/urdf/artpark.urdf.xacro" />
+  <xacro:include filename="$(find artpark)/urdf/robot.gazebo" />
+  <xacro:include filename="$(find erwhi_description)/urdf/sensors.urdf.xacro" />
+    <xacro:property name="M_PI" value="3.1415926535897931" />
+    <xacro:property name="M_PI_2" value="1.570796327" />
+</robot>
